@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consumo de api</title>
+  </head>
+  <body>
+    <h1>Lojas de games</h1>
+    <hr />
+    <ul id="list"></ul>
+    <hr />
+    <input type="text" name="title" id="title" />
+    <input type="number" name="year" id="year" />
+    <input type="number" name="price" id="price" />
+    <button onclick="()=>{CreateGames()}">Salvar</button>
+    <hr />
+    <button onclick="window.location.reload()">Atualizar</button>
+    <hr />
+
+    <input type="text" name="title" id="titleEdit" />
+    <input type="number" name="year" id="yearEdit" />
+    <input type="number" name="price" id="priceEdit" />
+    <button id="buttonSave">Salvar</button>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/src/js/index.js"></script>
+</html>
