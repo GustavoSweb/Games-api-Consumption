@@ -1,7 +1,28 @@
 const list = document.querySelector("#list")
+
+var axiosConfig = {
+    headers:{
+        Authorization: "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJndXN0YXZvQGdtYWlsLmNvbSIsImlhdCI6MTcwMzAxMjY2OSwiZXhwIjoxNzAzMjcxODY5fQ.Zv_7dCsjo-GcLcop6u55o7L2HofazpZPXNORevGMl0U"
+    }
+}
+
+async function login(){
+    var email = document.getElementById("email")
+    var password = document.getElementById("password")
+    try{
+        const data = await axios.post("http://localhost:8081/auth", {email:email.value, password:password.value})
+        alert("Você entrou na sua conta da API")
+    }catch(err){
+        alert("Login incoreto: "+err.response.data.err)
+        
+    }
+
+
+}
+
 async function deleteGame(item){
     try{
-        await axios.delete(`http://localhost:8081/game/${item.id}`)
+        await axios.delete(`http://localhost:8081/game/${item.id}`, axiosConfig)
         alert("Game deletado")
     }catch(err){
         console.error(err)
